@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  position: relative;
+  max-width: 1000px;
+  flex-wrap: wrap;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 100px 0;
+}
+
+.card:nth-child(odd) {
+  flex-direction: row;
+}
+
+.card:nth-child(even) {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.card:nth-child(even) .imgBx {
+  left: -25px;
+}
+
+.card .imgBx {
+  position: relative;
+  left: 25px;
+  width: 500px;
+  height: 400px;
+  z-index: 1;
+}
+
+.card .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card .contentBx {
+  position: relative;
+  right: 25px;
+  width: 500px;
+  height: 400px;
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 60px 20px 100px;
+}
+
+.card:nth-child(even) .contentBx {
+  right: -25px;
+  padding: 20px 100px 20px 60px;
+}
+
+.card .contentBx:before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  bottom: -50px;
+  left: 0;
+  right: 0;
+  background: #000;
+  z-index: -1;
+}
+
+.card .content h2 {
+  font-size: 1.5em;
+}
+
+.card .content p {
+  margin-top: 10px;
+}
+
+.card .content a {
+  display: inline-block;
+  margin-top: 15px;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  border: 1px solid #fff;
+}
+
+@media (max-width: 1000px) {
+  .card {
+    flex-direction: column;
+    max-width: 350px;
+    margin: 25px;
+  }
+  
+  
+  .card .imgBx {
+    width: 100%;
+    height: 250px;
+    left: 0;
+  }
+  
+  .card .contentBx {
+    width: 100%;
+    height: auto;
+    right: 0;
+    padding: 30px;
+    text-align: center;
+  }
+  
+  .card .contentBx:before {
+    top: 0;
+    bottom: 0;
+  }
+  
+  .card:nth-child(even) .imgBx {
+    left: 0;
+  }
+  
+  .card:nth-child(even) .contentBx {
+    right: 0;
+    padding: 30px;
+  }
+}
